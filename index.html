@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="বাংলায় সঠিক বয়স, জন্মদিন কাউন্টডাউন এবং তারিখের পার্থক্য হিসাব করুন। অফলাইনে ব্যবহারযোগ্য।">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>AgePro Premium</title>
+<style>
+:root{--bg:#0b1020;--panel:#141d31;--panel2:#1b2740;--text:#f4f7ff;--muted:#aab7d0;--accent:#7c5cff;--cyan:#48d8d0;--line:#2b3854;--gold:#ffd166;--danger:#ff879b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1c2850 0,#0b1020 55%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;min-height:100vh;padding-bottom:24px}
+.wrap{max-width:780px;margin:auto;padding:15px 13px 28px}.brand{display:flex;align-items:center;gap:11px;margin:8px 0 18px}.logo{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--cyan));font-size:25px;box-shadow:0 8px 24px #7c5cff40}.brand h1{font-size:22px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.badge{margin-left:auto;border:1px solid #806cff;color:#d8d0ff;background:#7c5cff22;padding:6px 9px;border-radius:20px;font-size:10px;font-weight:800}
+.hero{background:linear-gradient(135deg,#6c4df2,#247eab);border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 14px 34px #0004}.eyebrow{font-size:11px;opacity:.85;letter-spacing:1.2px}.hero h2{font-size:25px;line-height:1.25;margin:7px 0}.hero p{margin:0;color:#e8f3ff;font-size:13px;line-height:1.6}
+.tabs{display:flex;gap:7px;overflow-x:auto;padding:2px 0 9px;margin-bottom:6px}.tab{white-space:nowrap;background:#17233a;color:#b8c7e3;border:1px solid #34425f;border-radius:12px;padding:10px 13px;font:inherit;font-size:13px;font-weight:700}.tab.active{background:#7257ed;color:white;border-color:#9c8aff}
+.card{background:#141d31ed;border:1px solid var(--line);border-radius:19px;padding:16px;margin:12px 0;box-shadow:0 10px 28px #0002}.card h3{margin:0 0 13px;font-size:16px}.label{display:block;color:var(--muted);font-size:12px;margin:0 0 6px}.field{width:100%;padding:12px;border-radius:11px;background:#0d1527;color:var(--text);border:1px solid #34425f;font:inherit;outline:none;min-width:0}.field:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #48d8d020}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fieldgroup{margin-bottom:12px}.actions{display:flex;gap:9px;margin-top:12px}.btn{border:0;border-radius:12px;padding:12px 13px;font:inherit;font-size:14px;font-weight:750;cursor:pointer}.primary{background:linear-gradient(135deg,#8b70ff,#5b4be8);color:white;flex:1}.secondary{background:#25324d;color:#e4eaff;border:1px solid #3a4969}.danger{background:#3a1d32;color:#ffc6d0;border:1px solid #71354e}.error{color:#ff9eac;font-size:12px;margin-top:9px;display:none}.results{display:none}.bigage{background:linear-gradient(135deg,#202e4b,#17243b);border:1px solid #394b70;border-radius:17px;padding:17px;text-align:center}.bigage .small{font-size:12px;color:var(--muted)}.bigage .age{font-size:clamp(23px,6vw,36px);font-weight:850;margin:7px 0;color:white;letter-spacing:-.5px}.bigage .caption{font-size:12px;color:#b7c7e5}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:11px}.stat{background:#0e1729;border:1px solid #2b3b59;border-radius:13px;padding:12px;min-width:0}.stat .k{font-size:11px;color:var(--muted)}.stat .v{font-size:19px;font-weight:800;margin-top:5px;overflow-wrap:anywhere}.stat .sub{font-size:10px;color:#91a5c8;margin-top:3px}.highlight{color:var(--cyan)}.gold{color:var(--gold)}.pill{display:inline-block;background:#48d8d018;border:1px solid #48d8d050;color:var(--cyan);padding:4px 8px;border-radius:99px;font-size:10px}.line{height:1px;background:var(--line);margin:14px 0}.info{font-size:12px;color:var(--muted);line-height:1.65}.profilelist{display:grid;gap:8px}.profile{display:flex;align-items:center;gap:8px;background:#0e1729;border:1px solid #2b3b59;border-radius:12px;padding:10px}.profile .ptext{flex:1;min-width:0}.profile strong{display:block;font-size:13px}.profile small{display:block;color:var(--muted);font-size:11px}.mini{padding:8px 10px;font-size:12px}.hidden{display:none!important}.copy{width:100%;margin-top:10px}.footer{text-align:center;color:#8190ad;font-size:11px;padding:13px 4px}.notice{padding:10px 12px;border-radius:12px;background:#48d8d012;border:1px solid #48d8d038;color:#bfece8;font-size:12px;line-height:1.5}
+@media(min-width:580px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.wrap{padding-top:25px}.hero{padding:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="brand"><div class="logo">⌛</div><div><h1>AgePro Premium</h1><p>Age, Birthday & Date Calculator</p></div><div class="badge">OFFLINE PWA</div></header>
+<section class="hero"><div class="eyebrow">YOUR PERSONAL DATE TOOLKIT</div><h2>বয়সের হিসাব, আরও স্মার্টভাবে।</h2><p>সঠিক বয়স, জন্মদিনের কাউন্টডাউন, দুই তারিখের পার্থক্য এবং সেভ করা প্রোফাইল—সব এক অ্যাপে।</p></section>
+<nav class="tabs" aria-label="Calculator sections">
+<button class="tab active" data-tab="age">🎂 বয়স</button><button class="tab" data-tab="between">📆 তারিখের পার্থক্য</button><button class="tab" data-tab="profiles">👤 প্রোফাইল</button><button class="tab" data-tab="about">💎 Premium</button>
+</nav>
+<section id="panel-age">
+<div class="card"><h3>🎂 বয়স হিসাব করুন</h3>
+<div class="row"><div class="fieldgroup"><label class="label" for="dob">জন্মতারিখ</label><input class="field" type="date" id="dob" required></div><div class="fieldgroup"><label class="label" for="asof">হিসাবের তারিখ</label><input class="field" type="date" id="asof" required></div></div>
+<div class="fieldgroup"><label class="label" for="person">নাম (ঐচ্ছিক—প্রোফাইলে সেভ করতে)</label><input class="field" id="person" maxlength="40" placeholder="যেমন: আমার বয়স"></div>
+<div class="actions"><button class="btn primary" id="calc">✨ বয়স হিসাব করুন</button><button class="btn secondary" id="today">আজ</button></div><div class="error" id="ageError" role="alert"></div></div>
+<div class="results" id="ageResults"><div class="card"><h3>আপনার সঠিক বয়স <span class="pill">RESULT</span></h3><div class="bigage"><div class="small">বছর · মাস · দিন</div><div class="age" id="exact">—</div><div class="caption" id="birthline">—</div></div>
+<div class="stats">
+<div class="stat"><div class="k">মোট দিন</div><div class="v highlight" id="days">—</div><div class="sub">জন্ম থেকে নির্বাচিত তারিখ</div></div>
+<div class="stat"><div class="k">মোট সপ্তাহ</div><div class="v" id="weeks">—</div><div class="sub">পূর্ণ সপ্তাহ</div></div>
+<div class="stat"><div class="k">মোট মাস (আনুমানিক)</div><div class="v" id="months">—</div><div class="sub">দিন ÷ 30.4375</div></div>
+<div class="stat"><div class="k">জন্মবার</div><div class="v" id="weekday">—</div></div>
+<div class="stat"><div class="k">পরের জন্মদিন</div><div class="v gold" id="nextdate">—</div><div class="sub" id="nextin">—</div></div>
+<div class="stat"><div class="k">পরের জন্মদিনে বয়স</div><div class="v" id="turning">—</div></div>
+<div class="stat"><div class="k">মোট ঘণ্টা (আনুমানিক)</div><div class="v" id="hours">—</div></div>
+<div class="stat"><div class="k">মোট মিনিট (আনুমানিক)</div><div class="v" id="minutes">—</div></div>
+<div class="stat"><div class="k">লিপ ইয়ার</div><div class="v" id="leap">—</div><div class="sub">জন্মবছর থেকে হিসাবের বছর</div></div>
+</div><div class="actions"><button class="btn primary" id="saveProfile">💾 প্রোফাইল সেভ করুন</button><button class="btn secondary" id="share">↗ শেয়ার</button></div><button class="btn secondary copy" id="copy">📋 ফলাফল কপি করুন</button><div class="info" id="saveMsg"></div></div></div>
+</section>
+<section id="panel-between" class="hidden"><div class="card"><h3>📆 দুই তারিখের পার্থক্য</h3><div class="row"><div class="fieldgroup"><label class="label" for="dateA">প্রথম তারিখ</label><input class="field" type="date" id="dateA"></div><div class="fieldgroup"><label class="label" for="dateB">দ্বিতীয় তারিখ</label><input class="field" type="date" id="dateB"></div></div><div class="actions"><button class="btn primary" id="diffCalc">পার্থক্য হিসাব করুন</button><button class="btn secondary" id="swap">তারিখ বদল</button></div><div class="error" id="diffError"></div><div class="results" id="diffResults"><div class="line"></div><div class="bigage"><div class="small">দুই তারিখের ব্যবধান</div><div class="age" id="diffExact">—</div><div class="caption" id="diffCaption">—</div></div><div class="stats"><div class="stat"><div class="k">মোট দিন</div><div class="v highlight" id="diffDays">—</div></div><div class="stat"><div class="k">পূর্ণ সপ্তাহ</div><div class="v" id="diffWeeks">—</div></div><div class="stat"><div class="k">আনুমানিক মাস</div><div class="v" id="diffMonths">—</div></div></div></div></div></section>
+<section id="panel-profiles" class="hidden"><div class="card"><div class="row" style="align-items:center"><h3 style="margin:0">👤 সেভ করা প্রোফাইল</h3><button class="btn danger mini" id="clearProfiles">সব মুছুন</button></div><p class="info">প্রোফাইলগুলো এই ফোনের ব্রাউজারে থাকে। ইন্টারনেটে পাঠানো হয় না।</p><div class="profilelist" id="profileList"></div><p class="info" id="profileEmpty">এখনও কোনো প্রোফাইল সেভ করা হয়নি। বয়স হিসাব করে “প্রোফাইল সেভ করুন” চাপুন।</p></div></section>
+<section id="panel-about" class="hidden"><div class="card"><h3>💎 Premium Features</h3><div class="info">✓ বছর, মাস ও দিনের সঠিক বয়স<br>✓ মোট দিন, সপ্তাহ, ঘণ্টা ও মিনিট<br>✓ জন্মবার এবং পরের জন্মদিনের কাউন্টডাউন<br>✓ দুই তারিখের ব্যবধান<br>✓ একাধিক প্রোফাইল সেভ/লোড/মুছুন<br>✓ ফলাফল কপি ও শেয়ার<br>✓ অফলাইনে ব্যবহার—প্রথমবার অ্যাপটি অনলাইনে খুলে ক্যাশ হতে হবে<br>✓ আপনার প্রোফাইল শুধু এই ডিভাইসের ব্রাউজারে থাকে</div><div class="line"></div><div class="notice" id="installHint">ইনস্টল করতে Chrome-এর মেনু (⋮) খুলে “Install app” বা “Add to Home screen” বেছে নিন। অপশনটি পেতে অ্যাপটি HTTPS-এ হোস্ট করা থাকতে হবে।</div><div class="line"></div><button class="btn primary" id="installBtn" style="display:none;width:100%">📲 Install AgePro</button><p class="info">নোট: ব্রাউজারের ডেটা মুছে ফেললে সেভ করা প্রোফাইল হারিয়ে যেতে পারে।</p></div></section>
+<div class="footer">AgePro Premium · Made for mobile · Offline-ready</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function parse(s){if(!s)return null;const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)}
+function clean(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
+function daysBetween(a,b){return Math.round((clean(b)-clean(a))/86400000)}
+function fmt(n){return new Intl.NumberFormat('bn-IN').format(n)}
+function dateBn(d){return d.toLocaleDateString('bn-IN',{day:'numeric',month:'long',year:'numeric'})}
+function ageDiff(b,a){let y=a.getFullYear()-b.getFullYear(),m=a.getMonth()-b.getMonth(),d=a.getDate()-b.getDate();if(d<0){m--;d+=new Date(a.getFullYear(),a.getMonth(),0).getDate()}if(m<0){y--;m+=12}return{y,m,d}}
+function birthday(b,y){let n=new Date(y,b.getMonth(),b.getDate());if(b.getMonth()===1&&b.getDate()===29&&n.getMonth()!==1)n=new Date(y,1,28);return n}
+function nextBirthday(b,a){let n=birthday(b,a.getFullYear());if(n<a)n=birthday(b,a.getFullYear()+1);return n}
+function leap(y){return(y%4===0&&y%100!==0)||y%400===0}
+const now=new Date();$('dob').max=iso(now);$('asof').value=iso(now);$('dateA').value=iso(now);$('dateB').value=iso(now);
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===btn));['age','between','profiles','about'].forEach(k=>$('panel-'+k).classList.toggle('hidden',k!==btn.dataset.tab));if(btn.dataset.tab==='profiles')renderProfiles()}));
+$('today').onclick=()=>{$('asof').value=iso(new Date());$('ageError').style.display='none'};
+let current=null, shareText='';
+function error(id,msg){$(id).textContent=msg;$(id).style.display='block'}
+function hideError(id){$(id).style.display='none'}
+$('calc').onclick=()=>{
+ hideError('ageError');const b=parse($('dob').value),a=parse($('asof').value);
+ if(!b||!a)return error('ageError','জন্মতারিখ ও হিসাবের তারিখ দুটোই দিন।');
+ if(b>a)return error('ageError','জন্মতারিখ হিসাবের তারিখের পরে হতে পারে না।');
+ const x=ageDiff(b,a),total=daysBetween(b,a),next=nextBirthday(b,a),until=daysBetween(a,next);
+ current={name:$('person').value.trim()||'আমার বয়স',dob:$('dob').value,asof:$('asof').value};
+ $('exact').textContent=`${fmt(x.y)} বছর ${fmt(x.m)} মাস ${fmt(x.d)} দিন`;
+ $('birthline').textContent=`জন্ম: ${dateBn(b)} · হিসাব: ${dateBn(a)}`;
+ $('days').textContent=fmt(total);$('weeks').textContent=fmt(Math.floor(total/7));$('months').textContent=fmt(Math.floor(total/30.4375));
+ $('weekday').textContent=b.toLocaleDateString('bn-IN',{weekday:'long'});
+ $('nextdate').textContent=dateBn(next);$('nextin').textContent=until===0?'আজ আপনার জন্মদিন!':`আর ${fmt(until)} দিন বাকি`;
+ $('turning').textContent=fmt(x.y+(until===0?0:1))+' বছর';$('hours').textContent=fmt(total*24);$('minutes').textContent=fmt(total*1440);
+ let count=0;for(let y=b.getFullYear();y<=a.getFullYear();y++)if(leap(y))count++;
+ $('leap').textContent=fmt(count)+'টি';
+ shareText=`AgePro Premium\n${current.name}\nসঠিক বয়স: ${x.y} বছর ${x.m} মাস ${x.d} দিন\nমোট দিন: ${total}\nজন্মবার: ${b.toLocaleDateString('bn-IN',{weekday:'long'})}\nপরের জন্মদিন: ${dateBn(next)} (${until} দিন বাকি)`;
+ $('ageResults').style.display='block';$('saveMsg').textContent='';$('ageResults').scrollIntoView({behavior:'smooth',block:'start'});
+};
+$('diffCalc').onclick=()=>{hideError('diffError');const a=parse($('dateA').value),b=parse($('dateB').value);if(!a||!b)return error('diffError','দুটি তারিখই বেছে নিন।');const first=a<=b?a:b,last=a<=b?b:a,d=daysBetween(first,last),x=ageDiff(first,last);$('diffExact').textContent=`${fmt(x.y)} বছর ${fmt(x.m)} মাস ${fmt(x.d)} দিন`;$('diffCaption').textContent=`${dateBn(first)} থেকে ${dateBn(last)}`;$('diffDays').textContent=fmt(d);$('diffWeeks').textContent=fmt(Math.floor(d/7));$('diffMonths').textContent=fmt(Math.floor(d/30.4375));$('diffResults').style.display='block'};
+$('swap').onclick=()=>{const v=$('dateA').value;$('dateA').value=$('dateB').value;$('dateB').value=v};
+function getProfiles(){try{return JSON.parse(localStorage.getItem('agepro_profiles')||'[]')}catch(e){return[]}}
+function setProfiles(p){localStorage.setItem('agepro_profiles',JSON.stringify(p))}
+$('saveProfile').onclick=()=>{if(!current){$('saveMsg').textContent='আগে বয়স হিসাব করুন।';return}const p=getProfiles();const item={...current,id:Date.now()};p.unshift(item);setProfiles(p.slice(0,50));$('saveMsg').textContent='✅ প্রোফাইল এই ডিভাইসে সেভ হয়েছে।';};
+function renderProfiles(){const list=$('profileList');list.innerHTML='';const p=getProfiles();$('profileEmpty').style.display=p.length?'none':'block';p.forEach(item=>{const el=document.createElement('div');el.className='profile';const txt=document.createElement('div');txt.className='ptext';const strong=document.createElement('strong');strong.textContent=item.name;const small=document.createElement('small');small.textContent='জন্ম: '+item.dob+' · হিসাব: '+item.asof;txt.append(strong,small);const load=document.createElement('button');load.className='btn secondary mini';load.textContent='লোড';load.onclick=()=>{document.querySelector('[data-tab="age"]').click();$('person').value=item.name;$('dob').value=item.dob;$('asof').value=item.asof;$('calc').click()};const del=document.createElement('button');del.className='btn danger mini';del.textContent='মুছুন';del.onclick=()=>{setProfiles(getProfiles().filter(q=>q.id!==item.id));renderProfiles()};el.append(txt,load,del);list.append(el)})}
+$('clearProfiles').onclick=()=>{if(confirm('সব সেভ করা প্রোফাইল মুছে ফেলবেন?')){localStorage.removeItem('agepro_profiles');renderProfiles()}};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(shareText);$('copy').textContent='✅ কপি হয়েছে!'}catch(e){const t=document.createElement('textarea');t.value=shareText;document.body.append(t);t.select();document.execCommand('copy');t.remove();$('copy').textContent='✅ কপি হয়েছে!'}setTimeout(()=>$('copy').textContent='📋 ফলাফল কপি করুন',1600)};
+$('share').onclick=async()=>{if(!shareText)return; if(navigator.share){try{await navigator.share({title:'AgePro বয়সের হিসাব',text:shareText})}catch(e){}}else{try{await navigator.clipboard.writeText(shareText);$('saveMsg').textContent='ফলাফল কপি হয়েছে—এখন শেয়ার করতে পারো।'}catch(e){$('saveMsg').textContent='শেয়ার সাপোর্ট নেই; ফলাফল কপি বাটন ব্যবহার করুন।'}}};
+let installPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('installBtn').style.display='block'});$('installBtn').onclick=async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('installBtn').style.display='none'}};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+if(location.protocol==='file:')$('installHint').textContent='ফাইল হিসেবে খুললে হিসাবের সুবিধা কাজ করবে, কিন্তু PWA ইনস্টল ও offline cache চালু করতে HTTPS হোস্টিং প্রয়োজন। নিচের ধাপ অনুসরণ করুন।';
+</script>
+</body></html>
